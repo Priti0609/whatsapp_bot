@@ -1,4 +1,5 @@
 const qrcode = require('qrcode-terminal');
+const { MessageMedia } = require('whatsapp-web.js');
 
 const { Client,LocalAuth } = require('whatsapp-web.js');
 
@@ -26,6 +27,9 @@ client.on('ready', () => {
 
 	//sending message.
 	client.sendMessage(chatid,text);
+	const media=MessageMedia.fromFilePath('img.jpg');
+	client.sendMessage(chatid,media);
+
 
 });
 
